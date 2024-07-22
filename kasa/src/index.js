@@ -6,6 +6,7 @@ import Apropos from './pages/Apropos'
 import Fichelogment from './pages/Fichelogement'
 import Error from './pages/Error'
 import Header from "./composants/Header";
+import Footer from "./composants/Footer";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -18,6 +19,7 @@ root.render(
         <Route path="/fichelogement" element={<Fichelogment />} />
         <Route path="*" element={<Error />} />
       </Routes>
+      <Footer />
     </Router>
   </React.StrictMode>
 );

@@ -1,5 +1,62 @@
+@mixin flexCenterDimensions ($X, $Y, $background, $flexDIrection:column) {
+  width: $X;
+  height: $Y;
+  background: $background;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: $flexDIrection;
+}
+
+@mixin write($weight, $size, $lineHeight, $color, $align:center, $decoration:none) {
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $lineHeight;
+  color: $color;
+  text-align: $align;
+  text-decoration: none;
+}
+
 *, ::before, ::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+#root {
+  @include flexCenterDimensions(100%, 100vh, white);
+  padding: 45px 0px 0px 0px;
+  font-family: Montserrat;
+}
+
+header{
+  @include flexCenterDimensions(1240px, 68px, white, row);
+}
+
+nav {
+  @include flexCenterDimensions(309px, 34px, white, row);
+  .nav-acceuil {
+    width: 136px;
+    height: 34px;
+    @include write(500,24px,34.22px,black,right);
+  }
+
+  .nav-apropos {
+    width: 116px;
+    height: 34px;
+    @include write(500,24px,34.22px,black,right);
+  }
+  
+}
+
+footer{
+  @include flexCenterDimensions(100%, 209px, black);
+  flex-direction: column;
+  justify-content: space-around;
+  padding-top: 50px;
+  margin: 0 auto;
+}
+
+.txt-footer{
+  @include write(500,24px,34.22px,white);
 }
