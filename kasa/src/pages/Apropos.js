@@ -1,6 +1,11 @@
+import BannerTitreHome from '../composants/BannerTitreHome';
+import "../styles/App.scss";
+
 function Apropos(){
     return (
-        <div>Apropos !</div>
+        <section className='a-propos'>
+            <BannerTitreHome />
+        </section>
     )
 }
 

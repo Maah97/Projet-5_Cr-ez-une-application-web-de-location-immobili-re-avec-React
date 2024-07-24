@@ -1,6 +1,8 @@
 function Fichelogement(){
     return (
-        <div>Fiche logment</div>
+        <section className="Fiche-logement">
+            
+        </section>
     )
 }
 
