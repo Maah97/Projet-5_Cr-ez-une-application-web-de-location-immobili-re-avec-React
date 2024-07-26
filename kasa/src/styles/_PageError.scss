@@ -1,0 +1,39 @@
+.page-error {
+    @include flexDimensions(100%, auto, white);
+    padding: 0px 25px;
+    margin: 50px 0px;
+  
+    .number-error {
+      @include write(700,288px,410.69px,#FF6060,center);
+      margin: 0px 0px 50px 0px;
+    }
+  
+    .txt-error {
+      @include write(500,36px,51.34px,#FF6060,center);
+      margin: 50px 0px 50px 0px;
+    }
+  
+    .lien-page-accueil {
+      @include write(500,18px,25.67px,black,center);
+      text-decoration: underline;
+      margin: 100px 0px 100px 0px;
+    }
+  
+    @media (max-width: 729px) {
+      .number-error {
+        font-size: 96px;
+        line-height: 136.9px;
+      }
+  
+      .txt-error {
+        font-size: 18px;
+        line-height: 25.67px;
+      }
+  
+      .lien-page-accueil {
+        font-size: 14px;
+        line-height: 19.96px;
+      }
+    }
+  }
+  

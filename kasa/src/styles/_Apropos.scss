@@ -1,0 +1,11 @@
+.a-propos {
+    @include flexDimensions(100%, 100%, white);
+    padding: 0px 100px;
+    gap: 50px;
+    .banner-titre-home{
+      background: no-repeat center / cover url(../assets/imgApropos.png);
+      h1 {
+        display: none;
+      }
+    }
+  }

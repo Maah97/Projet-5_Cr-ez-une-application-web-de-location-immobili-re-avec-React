@@ -1,0 +1,66 @@
+.fiche-logement {
+    @include flexDimensions(100%, auto, white);
+    padding: 0px 100px;
+    .caroussel-pitures {
+      @include flexDimensions(100%, 415px, blue, row);
+      border-radius: 25px;
+      margin-bottom: 15px;
+      .fleche-precedent {
+        width: 96px;
+        height: 119.64px;
+        @include flexCenter();
+        i {
+          font-weight: 46.68px;
+          font-size: 79.2px;
+          color: white;
+          border-radius: 25px
+        }
+      }
+      .fleche-suivant {
+        @extend .fleche-precedent;
+      }
+      .pagination {
+        @include write(500,18px,25.67px,white);
+        align-self: flex-end;
+      }
+    }
+  
+    .titre-localisation-proprietaire{
+      @include flexDimensions(100%, 90px, white, row);
+      .titre-et-localisation {
+        width: 635px;
+        height: 77px;
+        .titre {
+          @include write(500,36px,51.34px,#FF6060);
+          text-align: left;
+        }
+        .localisation {
+          @include write(500,18px,25.67px,black);
+          text-align: left;
+        }
+      }
+  
+      .proprietaire {
+        display: flex;
+        width: 167px;
+        height: 64px;
+        position: relative;
+        top: -10px;
+        .photo {
+          width: 64px;
+          height: 64px;
+          border-radius: 99px;
+          background: #C4C4C4;
+          margin-left: 15px;
+        }
+        p {
+          @include write(500,18px,25.67px,#FF6060);
+          text-align: right;
+          width: 93px;
+          height: 52px;
+          word-wrap: break-word;
+          margin: auto 0px;
+        }
+      }
+    }
+  }  

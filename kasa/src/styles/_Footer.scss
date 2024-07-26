@@ -1,0 +1,20 @@
+footer{
+    @include flexDimensions(100%, 209px, black);
+    justify-content: space-around;
+    padding-top: 50px;
+    margin: 0 auto;
+    .txt-footer{
+      @include write(500,24px,34.22px,white);
+    }
+  
+    @media (max-width: 435px) {
+      justify-content: center;
+      .txt-footer {
+        font-size: 12px;
+        line-height: 17.11px;
+        width: 133px;
+        height: 46px;
+        margin-top: 13px;
+      }
+    }
+  }

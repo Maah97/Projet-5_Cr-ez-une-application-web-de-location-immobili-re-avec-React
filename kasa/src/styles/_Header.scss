@@ -1,0 +1,57 @@
+header{
+    @include flexDimensions(100%, 68px, white, row);
+    padding: 0px 100px;
+    .logo {
+      width: 210.32px;
+      height: 100%
+    }
+    nav {
+      @include flexDimensions(309px, 34px, white, row);
+      .nav-acceuil {
+        width: 136px;
+        height: 34px;
+        @include write(500,24px,34.22px,black,right);
+      }
+      .nav-acceuil.active {
+        text-decoration: underline;
+      }
+      .nav-apropos {
+        width: 116px;
+        height: 34px;
+        @include write(500,24px,34.22px,black,right);
+      }
+      .nav-apropos.active {
+        text-decoration: underline;
+      }
+      
+    }
+   // media queries du header 
+    @media (max-width: 830px) {
+      padding: 0px 20px;
+      height: 46.88px;
+      .logo {
+        width: 145px;
+        height: 100%
+      }
+      nav {
+        width: 190px;
+        height: 17px;
+        justify-content: flex-end;
+        gap: 26px;
+      }
+      nav .nav-acceuil{
+        width: 55px;
+        height: 17px;
+        font-size: 12px;
+        line-height: 17.11px;
+        text-transform: uppercase;
+      }
+      nav .nav-apropos{
+        width: 66px;
+        height: 17px;
+        font-size: 12px;
+        line-height: 17.11px;
+        text-transform: uppercase
+      }
+  }
+  }
