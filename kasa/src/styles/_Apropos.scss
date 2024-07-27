@@ -8,4 +8,47 @@
         display: none;
       }
     }
+    .bloc-des-apropos {
+        @include flexDimensions(100%, auto, white);
+        padding: 0px 108.5px;
+        gap: 10px;
+        .les-apropos {
+            width: 100%;
+            height: auto;
+            .titre {
+                @include flexDimensions(100%, 54px, #FF6060, row);
+                position: relative;
+                padding: 10px 20px 10px 15px;
+                border-radius: 5px;
+                z-index: 1;
+                p {
+                    @include write(700, 24px, 34.22px, #fff);
+                }
+                i {
+                    font-size: 24px;
+                    color: white;
+                    cursor: pointer;
+                    transform: rotate(180deg);
+                    transition: transform 0.5s ease-in-out;
+                }
+
+                i.rotate {
+                    transform: rotate(0deg);
+                }
+            }
+            .paragraphe {
+                display: block;
+                height: auto;
+                @include write(450, 19px, 30px, black);
+                text-align: left;
+                padding: 10px 20px 10px 15px;
+                transition: transform 0.3s linear, opacity 0.3s ease-in-out;
+            }
+            .paragraphe.anim {
+                transform: translateY(-42%);
+                opacity: 0;
+            }
+        }
+    }
+  
   }
