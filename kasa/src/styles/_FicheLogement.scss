@@ -5,7 +5,19 @@
       @include flexDimensions(100%, 415px, blue, row);
       border-radius: 25px;
       margin-bottom: 15px;
+      overflow: hidden;
+      .carroussel-container {
+        width: 100%;
+        display: flex;
+        .pictures {
+          width: 100%;
+          object-fit: cover;
+          border-radius: 25px;
+          flex-shrink: 0;
+        }
+      }
       .fleche-precedent {
+        position: relative;
         width: 96px;
         height: 119.64px;
         @include flexCenter();
@@ -17,18 +29,22 @@
         }
       }
       .fleche-suivant {
+        position: relative;
         @extend .fleche-precedent;
+        z-index: 5;
       }
       .pagination {
+        position: relative;
         @include write(500,18px,25.67px,white);
         align-self: flex-end;
+        z-index: 5;
       }
     }
   
     .titre-localisation-proprietaire{
       @include flexDimensions(100%, 90px, white, row);
       .titre-et-localisation {
-        width: 635px;
+        width: 100%;
         height: 77px;
         .titre {
           @include write(500,36px,51.34px,#FF6060);
@@ -46,7 +62,7 @@
         height: 64px;
         position: relative;
         top: -10px;
-        .photo {
+        .photo img {
           width: 64px;
           height: 64px;
           border-radius: 99px;
@@ -63,4 +79,89 @@
         }
       }
     }
+
+    .tag-rating {
+      @include flexDimensions(100%, 36px, white, row);
+      margin-bottom: 25px;
+      .bloc-tags {
+        @include flexDimensions(auto, 36px, white, row);
+        gap: 0px 15px;
+        .tags {
+          height: 25px;
+          border-radius: 10px;
+          background-color: #FF6060;
+          @include flexCenter();
+          width: auto;
+          min-width: 115px;
+          p {
+            @include write(700,14px,19.96px,white);
+            margin: 3px 15px 0px 15px;
+          }
+        }
+      }
+
+      .rating {
+        @include flexDimensions(196px, 36px, white, row);
+        .etoile {
+          font-size: 24px;
+          color: #E3E3E3;
+        }
+        @for $i from 1 through 5 {
+          .etoile.note#{$i} {
+            color: #FF6060;
+          }
+        }
+      }
+    }
+
+    .description-equipement {
+      @include flexDimensions(100%, auto, white, row);
+      align-items: flex-start;
+      gap: 0px 100px;
+      .les-apropos {
+        width: 100%;
+        height: auto;
+        margin-top: 0px;
+        .titre {
+            @include flexDimensions(100%, 54px, #FF6060, row);
+            position: relative;
+            padding: 10px 20px 10px 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            z-index: 1;
+            p {
+                @include write(700, 24px, 34.22px, #fff);
+            }
+            i {
+                font-size: 24px;
+                color: white;
+                transform: rotate(180deg);
+                cursor: pointer;
+                transition: transform 0.3s ease-in-out;
+            }
+
+            i.rotate {
+                transform: rotate(0deg);
+            }
+        }
+        .paragraphe {
+            height: auto;
+            width: 100%;
+            @include write(450, 19px, 30px, black);
+            text-align: left;
+            flex-wrap: wrap;
+            padding: 10px 20px 10px 15px;
+            transition: transform 0.15s linear, opacity 0.15s ease-in-out;
+            span {
+              display: inline-block;
+              width: 100%;
+            }
+        }
+        .paragraphe.anim {
+            transform: translateY(-42%);
+            opacity: 0;
+        }
+    }
+    }
+    
   }  

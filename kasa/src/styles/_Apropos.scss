@@ -27,9 +27,9 @@
                 i {
                     font-size: 24px;
                     color: white;
-                    cursor: pointer;
                     transform: rotate(180deg);
-                    transition: transform 0.5s ease-in-out;
+                    cursor: pointer;
+                    transition: transform 0.3s ease-in-out;
                 }
 
                 i.rotate {
@@ -39,16 +39,20 @@
             .paragraphe {
                 display: block;
                 height: auto;
+                white-space: 50px;
                 @include write(450, 19px, 30px, black);
                 text-align: left;
                 padding: 10px 20px 10px 15px;
-                transition: transform 0.3s linear, opacity 0.3s ease-in-out;
+                transition: transform 0.2s linear, opacity 0.2s ease-in-out;
             }
             .paragraphe.anim {
                 transform: translateY(-42%);
                 opacity: 0;
             }
+            span {
+                width: 250px;
+                text-align: center;
+             }
         }
     }
-  
   }

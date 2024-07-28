@@ -1,7 +1,8 @@
-function Tags(){
+
+function Tags(props){
     return (
         <div className="tags">
-            <p></p>
+            <p>{props.Tag}</p>
         </div>
     )
 }

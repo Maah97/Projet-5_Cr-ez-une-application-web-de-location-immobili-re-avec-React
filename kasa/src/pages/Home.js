@@ -10,7 +10,7 @@ function Home(){
             <div className='liste-logements'>
                {
                 Data.map((logement) => (
-                    <Card key={logement.id} titre={logement.title} imgCover={logement.cover} />
+                    <Card key={logement.id} id={logement.id} titre={logement.title} imgCover={logement.cover} />
                 ))
                }
             </div>

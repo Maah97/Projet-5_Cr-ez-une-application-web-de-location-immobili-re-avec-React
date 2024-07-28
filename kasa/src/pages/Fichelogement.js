@@ -1,30 +1,45 @@
 import Rating from '../composants/Rating';
 import Tags from "../composants/Tags";
 import DeroulementTexte from '../composants/DeroulementTexte'
+import { useParams } from 'react-router-dom';
+import Data from '../logements.json';
+import Error from './Error';
+import Caroussel from '../composants/Caroussel';
 
-function Fichelogement(){
+function Fichelogement(props){
+    const {id} = useParams();
+    const logement = Data.find(item => item.id === id);
+    if (logement === undefined) {
+        return <Error />
+    }
+    const listeEquipement = logement.equipments.map((item)=><span>{item}</span>);
     return (
         <section className="fiche-logement">
-            <div className="caroussel-pitures">
-                <div className="fleche-precedent"><i class="fa-solid fa-chevron-left"></i></div>
-                <p className="pagination">1/4</p>
-                <div className="fleche-suivant"><i class="fa-solid fa-chevron-right"></i></div>
-            </div>
+            <Caroussel pictures={logement.pictures}/>
             <div className="titre-localisation-proprietaire">
                 <div className="titre-et-localisation">
-                    <p className="titre">Cozy loft on the Canal Saint-Martin</p>
-                    <p className="localisation">Paris, Île-de-France</p>
+                    <p className="titre">{logement.title}</p>
+                    <p className="localisation">{logement.location}</p>
                 </div>
                 <div className="proprietaire">
-                    <p className="nom">Alexandre Dumas</p>
-                    <div className="photo"></div>
+                    <p className="nom">{logement.host.name}</p>
+                    <div className="photo"><img src={logement.host.picture} alt="proprietaire" /></div>
                 </div>
             </div>
             <div className="tag-rating">
-                <Tags />
-                <Rating />
+                <div className="bloc-tags">
+                    {
+                        logement.tags.map((tag,i) =>
+                            <Tags Tag={tag} />
+                        )
+                    }
+                </div>
+                <Rating note={logement.rating} />
             </div>
-            <DeroulementTexte />
+            <div className="description-equipement">
+                <DeroulementTexte titre='Descriptipon' contenu={logement.description} />
+                <DeroulementTexte titre='Équipements' contenu={listeEquipement} />
+            </div>
         </section>
     )
 }

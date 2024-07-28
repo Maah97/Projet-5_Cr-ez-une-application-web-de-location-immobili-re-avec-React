@@ -5,7 +5,7 @@ function Card(props) {
         background: `no-repeat center / cover url(${props.imgCover})`
     }
     return (
-        <Link to="/fichelogement" style={bg} className="card">
+        <Link to={'/fichelogement/'+ props.id} style={bg} className="card">
             <p>{props.titre}</p>
         </Link>
     )
