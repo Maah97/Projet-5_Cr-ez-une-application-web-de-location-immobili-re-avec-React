@@ -2,25 +2,32 @@
     @include flexDimensions(100%, auto, white);
     padding: 0px 100px;
     .caroussel-pitures {
-      @include flexDimensions(100%, 415px, blue, row);
+      @include flexDimensions(100%, 415px, white);
       border-radius: 25px;
       margin-bottom: 15px;
       overflow: hidden;
       .carroussel-container {
         width: 100%;
+        height: 100%;
         display: flex;
+        transition: transform 1s ease-in-out;
         .pictures {
           width: 100%;
+          height: 100%;
           object-fit: cover;
           border-radius: 25px;
           flex-shrink: 0;
         }
       }
       .fleche-precedent {
-        position: relative;
         width: 96px;
         height: 119.64px;
-        @include flexCenter();
+        position: relative;
+        top: -207.5px;
+        left: -50%;
+        transform: translateY(-50%);
+        margin-left: 130px;
+        cursor: pointer;
         i {
           font-weight: 46.68px;
           font-size: 79.2px;
@@ -29,15 +36,17 @@
         }
       }
       .fleche-suivant {
-        position: relative;
         @extend .fleche-precedent;
-        z-index: 5;
+        top: -327.14px;
+        left: 50%;
+        transform: translateY(-50%);
+        margin-right: 175px;
       }
       .pagination {
-        position: relative;
         @include write(500,18px,25.67px,white);
-        align-self: flex-end;
-        z-index: 5;
+        position: relative;
+        top: -125px;
+        
       }
     }
   

@@ -37,7 +37,7 @@ function Fichelogement(props){
                 <Rating note={logement.rating} />
             </div>
             <div className="description-equipement">
-                <DeroulementTexte titre='Descriptipon' contenu={logement.description} />
+                <DeroulementTexte titre='Description' contenu={logement.description} />
                 <DeroulementTexte titre='Équipements' contenu={listeEquipement} />
             </div>
         </section>
