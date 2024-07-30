@@ -2,11 +2,11 @@
     @include flexDimensions(100%, 100%, white);
     padding: 0px 100px;
     gap: 50px;
-    .banner-titre-home{
-      background: no-repeat center / cover url(../assets/imgApropos.png);
-      h1 {
-        display: none;
-      }
+    .banner-titre-home {
+        background: no-repeat center / cover url(../assets/imgApropos.png);
+        h1 {
+            display: none;
+        }
     }
     .bloc-des-apropos {
         @include flexDimensions(100%, auto, white);
@@ -55,4 +55,34 @@
              }
         }
     }
+    @media (max-width: 985px) {
+        padding: 0px 19.5px;
+        gap: 19px;
+        .bloc-des-apropos {
+            gap: 5px;
+        }
+    }
+    
+    @media (max-width: 830px) {
+        .bloc-des-apropos {
+            padding: 0px;
+            .les-apropos {
+                .titre {
+                    height: 30px;
+                    p {
+                        font-size: 13px;
+                        line-height: 18.54px;
+                    }
+                    i {
+                        font-size: 9.14px;
+                    }
+                }
+                .paragraphe {
+                    font-size: 14px;
+                    line-height: 20px;
+                }
+            }
+        }        
+    }
+
   }

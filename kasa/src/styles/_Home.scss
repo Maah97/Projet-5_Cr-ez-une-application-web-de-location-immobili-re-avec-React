@@ -33,17 +33,6 @@
     }
   
     @media (max-width: 830px) {
-      .banner-titre-home {
-        height: 111px;
-        border-radius: 10px;
-        h1 {
-          font-size: 24px;
-          line-height: 24px;
-        }
-        .bg-color {
-          border-radius: 10px;
-        }
-      }
       .liste-logements {
         gap: 20px 20px;
         padding: 20px 7px;  
@@ -99,5 +88,17 @@
       opacity: 0.6;
       position: absolute;
       top: 0px
+    }
+
+    @media (max-width: 830px) {
+      height: 111px;
+      border-radius: 10px;
+      h1 {
+        font-size: 24px;
+        line-height: 24px;
+      }
+      .bg-color {
+        border-radius: 10px;
+      }
     }
   }
