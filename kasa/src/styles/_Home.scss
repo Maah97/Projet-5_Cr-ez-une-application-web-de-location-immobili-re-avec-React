@@ -8,11 +8,11 @@
     .liste-logements {
       @include flexDimensions(100%, auto, #F6F6F6, row, space-evenly);
       flex-wrap: wrap;
-      gap: 70px 50px;
-      padding: 15px 15px;
+      gap: 55px 4.435%;
+      padding: 55px 4.435%;
       border-radius: 25px;
       .card {
-        width: 340px;
+        width: 27.42%;
         height: 340px;
         border-radius: 15px;
         display: flex;
