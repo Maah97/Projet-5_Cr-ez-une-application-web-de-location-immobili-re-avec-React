@@ -28,7 +28,7 @@ function DeroulementTexte(props){
         <div className="les-apropos">
             <div className="titre">
                 <p>{props.titre}</p>
-                <i onClick={() => setOpen(o => !o)} class={ClassFleche}></i>
+                <i onClick={() => setOpen(o => !o)} className={ClassFleche}></i>
             </div>
             <p className={Class}>{afficher && props.contenu}</p>
         </div>
