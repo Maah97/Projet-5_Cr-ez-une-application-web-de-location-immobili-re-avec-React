@@ -30,7 +30,7 @@ function Fichelogement(props){
                 <div className="bloc-tags">
                     {
                         logement.tags.map((tag,i) =>
-                            <Tags Tag={tag} />
+                            <Tags key={i} Tag={tag} />
                         )
                     }
                 </div>

@@ -19,12 +19,12 @@ function Caroussel(props) {
         <div className="caroussel-pitures">
             <div className='carroussel-container' style={{transform:`translateX(-${imgIndex*100}%)`}}>
                 {props.pictures.map((picture, i) =>
-                    <img className='pictures' src={picture} alt="" />
+                    <img key={i} className='pictures' src={picture} alt="" />
                 )}
             </div>
-            <div onClick={prevImg} className="fleche-precedent">{props.pictures.length > 1 ? <i class="fa-solid fa-chevron-left"></i> : ""}</div>
+            <div onClick={prevImg} className="fleche-precedent">{props.pictures.length > 1 ? <i className="fa-solid fa-chevron-left"></i> : ""}</div>
             <p className="pagination">{props.pictures.length > 1 ? `${imgIndex+1}/${props.pictures.length}` : ""}</p>
-            <div onClick={nextImg} className="fleche-suivant">{props.pictures.length > 1 ? <i class="fa-solid fa-chevron-right"></i> : ""}</div>
+            <div onClick={nextImg} className="fleche-suivant">{props.pictures.length > 1 ? <i className="fa-solid fa-chevron-right"></i> : ""}</div>
         </div>
     );
 }
