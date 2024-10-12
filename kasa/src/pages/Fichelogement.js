@@ -15,7 +15,7 @@ function Fichelogement(props){
     const listeEquipement = logement.equipments.map((item)=><span>{item}</span>);
     return (
         <section className="fiche-logement">
-            <Caroussel pictures={logement.pictures}/>
+            <Caroussel key={logement.id} pictures={logement.pictures}/>
             <div className="titre-localisation-proprietaire">
                 <div className="titre-et-localisation">
                     <p className="titre">{logement.title}</p>
@@ -34,11 +34,11 @@ function Fichelogement(props){
                         )
                     }
                 </div>
-                <Rating note={logement.rating} />
+                <Rating key={logement.id} note={logement.rating} />
             </div>
             <div className="description-equipement">
-                <DeroulementTexte titre='Description' contenu={logement.description} />
-                <DeroulementTexte titre='Équipements' contenu={listeEquipement} />
+                <DeroulementTexte key={`${logement.id}1`} titre='Description' contenu={logement.description} />
+                <DeroulementTexte key={logement.id} titre='Équipements' contenu={listeEquipement} />
             </div>
         </section>
     )

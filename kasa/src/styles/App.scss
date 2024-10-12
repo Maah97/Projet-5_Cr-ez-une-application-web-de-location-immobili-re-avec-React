@@ -12,7 +12,7 @@
   padding: 0;
 }
 
-body {
+#root {
   width: 100%;
   @include flexCenter();
   flex-direction: column;
